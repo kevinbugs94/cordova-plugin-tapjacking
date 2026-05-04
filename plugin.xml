@@ -13,7 +13,7 @@
 
         <!-- Layout -->
         <resource-file src="src/android/overlay_layout.xml"
-                       target="res/layout/overlay_layout.xml" />
+               target="app/src/main/res/layout/overlay_layout.xml" />
 
         <!-- Permiso -->
         <config-file target="AndroidManifest.xml" parent="/manifest">
