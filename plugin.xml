@@ -1,0 +1,29 @@
+<plugin id="com.example.tapjacking" version="1.0.0">
+    <name>TapjackingOverlayPlugin</name>
+
+    <platform name="android">
+
+        <!-- Clase principal -->
+        <source-file src="src/android/TapjackingOverlayPlugin.java"
+                     target-dir="src/com/example/tapjacking" />
+
+        <!-- Servicio -->
+        <source-file src="src/android/OverlayService.java"
+                     target-dir="src/com/example/tapjacking" />
+
+        <!-- Layout -->
+        <resource-file src="src/android/overlay_layout.xml"
+                       target="res/layout/overlay_layout.xml" />
+
+        <!-- Permiso -->
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+        </config-file>
+
+        <!-- Servicio en manifest -->
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <service android:name="com.example.tapjacking.OverlayService"/>
+        </config-file>
+
+    </platform>
+</plugin>
