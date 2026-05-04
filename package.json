@@ -1,0 +1,11 @@
+{
+  "name": "tapjacking-overlay-plugin",
+  "version": "1.0.0",
+  "description": "Plugin para test de tapjacking",
+  "keywords": ["tapjacking", "plugin", "cordova"],
+  "license": "MIT",
+  "cordova": {
+    "id": "com.example.tapjacking",
+    "platforms": ["android"]
+  }
+}
