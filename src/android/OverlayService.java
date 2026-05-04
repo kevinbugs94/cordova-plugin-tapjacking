@@ -17,7 +17,13 @@ public class OverlayService extends Service {
 
         windowManager = (WindowManager) getSystemService(WINDOW_SERVICE);
 
-        overlayView = LayoutInflater.from(this).inflate(R.layout.overlay_layout, null);
+        int layoutId = getResources().getIdentifier(
+            "overlay_layout",
+            "layout",
+            getApplicationContext().getPackageName()
+        );
+        
+        overlayView = LayoutInflater.from(this).inflate(layoutId, null);
 
         int layoutFlag;
 
